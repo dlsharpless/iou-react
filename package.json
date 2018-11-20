@@ -1,0 +1,12 @@
+{
+  "name": "iou-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dlsharpless/iou-react.git",
+  "author": "dlsharpless <10237785+dlsharpless@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13"
+  }
+}
