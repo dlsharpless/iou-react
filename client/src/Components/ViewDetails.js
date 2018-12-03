@@ -7,7 +7,7 @@ class ViewDetails extends Component {
       lender:"",
       borrower:"",
       status: "",
-      principal: 0,
+      principal: 3,
       interest: 0,
       balance: 0,
       startDate: "",
@@ -18,12 +18,19 @@ class ViewDetails extends Component {
    }
    componentDidMount(){
       console.log(this.props.location.state)
+      axios.get('routegoeshere':id, datagoeshere)
+      .then(res){
+         this.setState({
+            principal : res.data.principal,
+         })
+      }
+
       
    }
    render() {
       return (
          <div>
-            hello world
+            {this.state.principal}
 			</div>
       )
    }
@@ -33,44 +40,44 @@ export default ViewDetails;
 
 ///
 
-$.ajax({
-   url: `/api/loans/${loanId}`,
-   method: "GET",
-   // data: {
-   //     _id: loanId
-   // }
-}).then(function (response) {
-   let balance = parseFloat(response.principal.$numberDecimal) + parseFloat(response.interest.$numberDecimal);
-   $("#content").html(`
-       <div class="center400">
-           <h3>Loan Details</h3>
-           <button id="dashboardButton">Back to Dashboard</button>
-       </div>
-       <div class="left400">
-           <p>Lender: ${response.lender}</p>
-           <p>Borrower: ${response.borrower}</p>
-           <p>Status: ${response.status}</p>
-           <p>Principal: ${response.principal.$numberDecimal}</p>
-           <p>Interest: ${response.interest.$numberDecimal}</p>
-           <p>Balance: ${response.balance ? response.balance.$numberDecimal : "Pending"}</p>
-           <p>Start Date: ${response.startDate}</p>
-           <p>End Date: ${response.endDate}</p>
-           <p>Notes:</p><p>${response.notes1}</p>
-       </div>
-   `)
-   if (response.notes2) {
-       $(".left400").append(`
-           <p>${response.notes2}</p>
-       `)
-   }
-   if (activeUser === response.authority) {
-       $(".left400").append(`
-           <label for="notes">Notes:</label>
-           <textarea id="notes"></textarea><br>
-       `)
-       $("#content").append(`
-           <button id="approveButton" balance=${balance} loanId=${loanId}>Approve</button>
-           <button id="denyButton" loanId=${loanId}>Deny</button>
-       `)
-   }
-})
+// $.ajax({
+//    url: `/api/loans/${loanId}`,
+//    method: "GET",
+//    // data: {
+//    //     _id: loanId
+//    // }
+// }).then(function (response) {
+//    let balance = parseFloat(response.principal.$numberDecimal) + parseFloat(response.interest.$numberDecimal);
+//    $("#content").html(`
+//        <div class="center400">
+//            <h3>Loan Details</h3>
+//            <button id="dashboardButton">Back to Dashboard</button>
+//        </div>
+//        <div class="left400">
+//            <p>Lender: ${response.lender}</p>
+//            <p>Borrower: ${response.borrower}</p>
+//            <p>Status: ${response.status}</p>
+//            <p>Principal: ${response.principal.$numberDecimal}</p>
+//            <p>Interest: ${response.interest.$numberDecimal}</p>
+//            <p>Balance: ${response.balance ? response.balance.$numberDecimal : "Pending"}</p>
+//            <p>Start Date: ${response.startDate}</p>
+//            <p>End Date: ${response.endDate}</p>
+//            <p>Notes:</p><p>${response.notes1}</p>
+//        </div>
+//    `)
+//    if (response.notes2) {
+//        $(".left400").append(`
+//            <p>${response.notes2}</p>
+//        `)
+//    }
+//    if (activeUser === response.authority) {
+//        $(".left400").append(`
+//            <label for="notes">Notes:</label>
+//            <textarea id="notes"></textarea><br>
+//        `)
+//        $("#content").append(`
+//            <button id="approveButton" balance=${balance} loanId=${loanId}>Approve</button>
+//            <button id="denyButton" loanId=${loanId}>Deny</button>
+//        `)
+//    }
+// })
