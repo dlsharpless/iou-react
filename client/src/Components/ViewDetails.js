@@ -16,17 +16,17 @@ class ViewDetails extends Component {
       notes2: "",
       authority: ""
    }
-   componentDidMount(){
-      console.log(this.props.location.state)
-      axios.get('routegoeshere':id, datagoeshere)
-      .then(res){
-         this.setState({
-            principal : res.data.principal,
-         })
-      }
+   // componentDidMount(){
+   //    console.log(this.props.location.state)
+   //    axios.get('routegoeshere':id, datagoeshere)
+   //    .then(res){
+   //       this.setState({
+   //          principal : res.data.principal,
+   //       })
+   //    }
 
       
-   }
+   // }
    render() {
       return (
          <div>
