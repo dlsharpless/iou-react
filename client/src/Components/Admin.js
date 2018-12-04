@@ -102,7 +102,7 @@ class Admin extends Component {
                         {/* Status */}
                         <td>{loan.status}</td>
                         {/* Balance */}
-                        <td>{loan.balance.$numberDecimal || ''}</td>
+                        <td>{loan.balance ? loan.balance.$numberDecimal || '' : ''}</td>
                         {/* Delete */}
                         <td><button className="details" value={loan._id} onClick={this.deleteLoan}>Delete</button></td>
                      </tr>)}

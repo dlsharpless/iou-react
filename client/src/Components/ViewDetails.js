@@ -101,22 +101,3 @@ class ViewDetails extends Component {
 }
 
 export default ViewDetails;
-
-// const approve = function (loanId, balance) {
-//    let notes2 = `${activeUser}: ${$("#notes").val().trim()}`;
-//    $.ajax({
-//        url: "/api/loans",
-//        method: "PUT",
-//        data: {
-//            loanId: loanId,
-//            status: "Active",
-//            balance: balance,
-//            notes2: notes2,
-//            authority: null
-//        }
-//    }).then(function (response) {
-//        if(response.success){
-//            viewDetails(loanId);
-//        }
-//    })
-// }
