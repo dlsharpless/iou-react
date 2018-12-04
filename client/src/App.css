@@ -85,3 +85,11 @@ input {
 .left400 textarea {
    width: 300px;
 }
+
+#invalidLogin {
+   color: red;
+   font-weight: bold;
+   text-align: center;
+   margin-top: -50px;
+   height: 20px;
+}

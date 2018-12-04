@@ -16,20 +16,22 @@ class Signup extends Component {
       })
    }
    signupSubmit = (event) => {
-      console.log("LOL")
       event.preventDefault();
-      let { name, email, phone, password1, password2 } = this.state
-      if (name && email && phone && password1 && password1 === password2) {
-
+      if (this.state.name && this.state.email && this.state.phone && this.state.password1 && this.state.password1 === this.state.password2) {
          axios.post(`/api/users`, {
-            email: email,
-            password: password1,
-            name: name,
-            phone: phone
-         })
-            .then((res) => {
-               console.log(res)
+            email: this.state.email,
+            password: this.state.password1,
+            name: this.state.name,
+            phone: this.state.phone
+         }).then((res) => {
+            history.push({
+               pathname:"/dashboard",
+               state:{
+                  user:this.state.email,
+                  activeName:this.state.name
+               }
             })
+         })
       }
       else {
          alert("Please fill out all fields")

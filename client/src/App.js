@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Router, Route, Link, Switch } from 'react-router-dom';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Homepage from "./Components/Homepage";
 import Signup from "./Components/Signup";
 import Dashboard from "./Components/Dashboard";
 import Create from "./Components/Create";
 import ViewDetails from "./Components/ViewDetails";
+import Admin from "./Components/Admin";
 import history from './history';
 
 class App extends Component {
@@ -34,6 +35,7 @@ class App extends Component {
         <Route exact path="/dashboard" component={Dashboard}/>
         <Route exact path="/create" component={Create}/>
         <Route exact path="/viewdetails" component={ViewDetails}/>
+        <Route exact path="/admin" component={Admin}/>
       </Switch>
     </div>
     </div>
